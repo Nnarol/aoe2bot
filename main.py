@@ -4,22 +4,19 @@ import re
 import praw.exceptions
 from prawcore.exceptions import PrawcoreException
 import time
-import credentials
+import os
 
-# Fill out the client id and secret!
-# TODO: Read these values from somewhere independent from
-#       the source project.
-#       The user should learn as early as possible if this data is
-#       missing, preferably before the script even runs.
 reddit = praw.Reddit(
-    client_id="",
-    client_secret="",
-    user_agent="<console:AOE2:1.0>",
-    username=credentials.username,
-    password=credentials.password
+    client_id=os.environ["PRAW_CLIENT_ID"],
+    client_secret=os.environ["PRAW_SECRET"],
+    user_agent="test",
+    username=os.environ["PRAW_USERNAME"],
+    password=os.environ["PRAW_PASSWORD"]
 )
 
-subreddit = reddit.subreddit("aoe2")
+# The subreddit can also be specified through the environment
+# for testing purposes.
+subreddit = reddit.subreddit(os.environ.get("PRAW_SUBREDDIT") or "aoe2")
 *tech_keys, = scraping.tech_all
 with open("log_id.txt", "r") as log:
     prev_id = log.read()
