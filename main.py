@@ -6,9 +6,14 @@ from prawcore.exceptions import PrawcoreException
 import time
 import credentials
 
+# Fill out the client id and secret!
+# TODO: Read these values from somewhere independent from
+#       the source project.
+#       The user should learn as early as possible if this data is
+#       missing, preferably before the script even runs.
 reddit = praw.Reddit(
-    client_id="hNhzP-xZjm5OBXjbX0u1sg",
-    client_secret="gNtPCvUyqEjFJC_UjQwop4xxdGSuAw",
+    client_id="",
+    client_secret="",
     user_agent="<console:AOE2:1.0>",
     username=credentials.username,
     password=credentials.password
