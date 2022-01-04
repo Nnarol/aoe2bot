@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import praw
 import scraping
 import re
