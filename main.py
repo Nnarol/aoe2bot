@@ -16,7 +16,7 @@ reddit = praw.Reddit(
     password=os.environ["PRAW_PASSWORD"]
 )
 
-# The subreddit can also be specified through the environment
+# The subreddit to use can also be specified through the environment
 # for testing purposes.
 subreddit = reddit.subreddit(os.environ.get("PRAW_SUBREDDIT") or "aoe2")
 *tech_keys, = scraping.tech_all
